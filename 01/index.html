@@ -4,11 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript</title>
-    <script>
-        alert('Teste JS')
+
+    <script type="text/javascript">
+
+    function minhaFuncao(arg, arg2){
+        var soma = arg + arg2
+        var msg = 'A soma é igual a: ';
+        alert(msg + soma)
+    }
+
+    function escreve(arg){
+
+        document.write(arg);
+    }
+
     </script>
 </head>
 <body>
-    
+    <button onclick="minhaFuncao(10,20)">Clique</button>
+<br><br><br>
+    <button onclick="escreve('<h1>Programação WEB</h1>')">Escreve</button>
+
+
 </body>
 </html>
