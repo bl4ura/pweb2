@@ -9,9 +9,39 @@
 
                 var raiz = Math.sqrt(arg);
 
-                alert('A raíz quadrada de ' + (arg) + ' é: ' + raiz);
+                alert('A raiz quadrada de ' + (arg) + ' é: ' + raiz);
 
-            }       
+            }    
+
+            function escreveDiv(texto){
+
+                document.getElementById("minhaDiv").innerHTML = texto;
+
+            }  
+
+            function escreveDiv2(texto){
+                texto = prompt('Digite um texto qualquer');
+                document.getElementById("minhaDiv2").innerHTML = texto;
+
+            }  
+
+            function escreveDiv3(){
+
+                let n = prompt('Digite o valor de N: ');
+
+                n = parseInt(n);
+
+                let div = document.getElementById("minhaDiv3");
+                    div.innerHTML = "";
+
+                for(let i = 1; i <= n; i++) {
+                    div.innerHTML += i + "<br>";
+                }
+
+            }   
+
+            
+    
 
         </script>
 
@@ -23,6 +53,45 @@
 
 </head>
 <body>
-    
+    <h1>Raiz Quadrada</h1>
+    <button onclick="raiz(25)">Raíz de 25</button>
+    <br>
+    <br>
+
+    <button onclick="raiz(36)">Raíz de 36</button>
+    <br>
+    <br>
+
+    <button onclick="raiz(49)">Raíz de 49</button>
+    <br>
+    <br>
+
+    <hr>
+
+    <h1>Escrevendo na Div</h1>
+    <button onclick="escreveDiv('<h1> Programação Web</h1>')">Escrever</button>
+    <div id="minhaDiv"></div>
+
+    <br>
+    <br>
+
+    <hr>
+
+    <h1>Escrevendo Texto Dinâmico</h1>
+    <button onclick="escreveDiv2()">Escrever</button>
+    <div id="minhaDiv2"></div>
+
+    <br>
+    <br>
+    <hr>
+
+    <h1>Desafio</h1>
+    <button onclick="escreveDiv3()">Escreve Números</button>
+    <div id="minhaDiv3"></div>
+
+    <br>
+    <br>
+
+    <hr>
 </body>
 </html>
