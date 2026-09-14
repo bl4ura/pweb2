@@ -12,7 +12,7 @@
             const container = document.getElementById ('minhaDiv');
             container.innerHTML = ''; 
 
-                for (var i = 0; i < pilhaPessoas.lenght; i++) {
+                for (var i = 0; i < pilhaPessoas.length; i++) {
                     var tag = '<h5>' + i + '-' + pilhaPessoas [i] + '</h5';
                     container.innerHTML += tag;
 
@@ -33,7 +33,7 @@
         function posicao(){
             var indice = prompt ('Qual posição da lista deseja consultar?');
             indice = Number(indice);
-            if (indice < 0 || indice >= pilhaPessoas.lenght){
+            if (indice < 0 || indice >= pilhaPessoas.length){
                 alert('Posição Inválida!');
                 return;
             }
@@ -42,7 +42,7 @@
         
 
         function remover () { 
-            if (pilhasPessoas.lenght === 0) {
+            if (pilhasPessoas.length === 0) {
                 alert('A pilha está vazia!'); 
             } else {
               let removido = pilhaPessoas.pop();
@@ -54,14 +54,14 @@
         function LimparLista() {
             pilhaPessoas = []; 
             mostrarLista();
-            if (pilhaPessoas.lenght === 0) {
+            if (pilhaPessoas.length === 0) {
                 alert("A lista está vazia!"); 
                 return;
             }
          }
 
         function inverterPilha() {
-            if (pilhaPessoas.lenght === 0){
+            if (pilhaPessoas.length === 0){
                 alert ("A lista está vazia!"); 
                 return;
             }
