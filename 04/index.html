@@ -21,6 +21,10 @@
             var nome = prompt('Qual o nome da pessoa?');
             pilhaPessoas.push(nome);
             mostrarLista();
+            if (!nome || nome.trim() === "") {
+                alert("Por favor, digite um nome válido!");
+                return;
+            }
         }
 
         function posicao(){
@@ -47,8 +51,20 @@
         function LimparLista() {
             pilhaPessoas = []; 
             mostrarLista();
+            if (pilhaPessoas.lenght === 0) {
+                alert("A lista está vazia!"); 
+                return;
+            }
          }
-
+         
+        function inverterPilha() {
+            if (pilhaPessoas.lenght === 0){
+                alert ("A lista está vazia!"); 
+                return;
+            }
+            pilhaPessoas.revere();
+            mostrarLista();
+        }
 
 
 
@@ -63,6 +79,7 @@
     <button onclick = "posicao()">Posição </button> 
     <button onclick = "remover()">Remover </button>  
     <button onclick = "limparLista()">Limpar </button>
+     <button onclick = "inverterPilha()">Inverter Pilha </button>
     <div id = "minhaDiv"></div>
 
     <hr>
