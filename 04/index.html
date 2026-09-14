@@ -21,20 +21,30 @@
         }
         function adicionar (){
             var nome = prompt('Qual o nome da pessoa?');
+            if (nome === null || nome.trim() === "") {
+                alert('Nome inválido!');
+                return;
+            } 
+
             pilhaPessoas.push(nome);
             mostrarLista();
             
-            }
+         }
     
 
         function posicao(){
-            var indice = prompt ('Qual posição da lista deseja consultar?');
-            indice = Number(indice);
-            if (indice < 0 || indice >= pilhaPessoas.length){
-                alert('Posição Inválida!');
-                return;
+            var input = prompt ('Qual posição da lista deseja consultar?');
+           
+           if (input === null) return;
+
+            var indice = parseInt(input, 10);
+            
+          if (isNaN(indice) || indice < 0 || indice >= pilhaPessoas.length) {[cite: 1]
+                alert('Posição inválida!');[cite: 1]
+                return;[cite: 1]
             }
-            alert('Na posição ' + indice + 'está:' + pilhaPessoas [indice]);
+
+            alert('Na posição ' + indice + ' está: ' + pilhaPessoas[indice]);[cite: 1]
         }
         
 
