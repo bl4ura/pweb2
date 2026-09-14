@@ -13,7 +13,7 @@
             container.innerHTML = ''; 
 
                 for (var i = 0; i < pilhaPessoas.length; i++) {
-                    var tag = '<h5>' + i + ' - ' + pilhaPessoas [i] + ' </h5 ';
+                    var tag = '<h5>' + i + '-' + pilhaPessoas [i] + '</h5';
                     container.innerHTML += tag;
 
                 }
@@ -21,31 +21,24 @@
         }
         function adicionar (){
             var nome = prompt('Qual o nome da pessoa?');
-            if (nome === null || nome.trim() === "") {
-                alert('Nome inválido!');
+            if (!nome || nome.trim() === "") {
+                alert("Por favor, digite um nome válido!");
                 return;
-            } 
-
             pilhaPessoas.push(nome);
             mostrarLista();
             
-         }
-    
+            }
+        }
 
         function posicao(){
-            var input = prompt ('Qual posição da lista deseja consultar?');
-           
-           if (input === null) return;
-
-            var indice = parseInt(input, 10);
-            
-          if (isNaN(indice) || indice < 0 || indice >= pilhaPessoas.length) {[cite: 1]
-                alert('Posição inválida!');[cite: 1]
-                return;[cite: 1]
+            var indice = prompt ('Qual posição da lista deseja consultar?');
+            indice = Number(indice);
+            if (indice < 0 || indice >= pilhaPessoas.length){
+                alert('Posição Inválida!');
+                return;
             }
-
-            alert('Na posição ' + indice + ' está: ' + pilhaPessoas[indice]);[cite: 1]
-        }
+            alert('Na posição ' + indice + 'está:' + pilhaPessoas [indice]);
+             }
         
 
         function remover () { 
@@ -75,10 +68,6 @@
             pilhaPessoas.revere();
             mostrarLista();
         }
-
-
-
-
 
 
      </script>
