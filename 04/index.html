@@ -8,7 +8,6 @@
 
 
         let pilhaPessoas = Array();
-
         function mostrarLista () {
             const container = document.getElementById ('minhaDiv');
             container.innerHTML = ''; 
@@ -22,18 +21,17 @@
         }
         function adicionar (){
             var nome = prompt('Qual o nome da pessoa?');
-            if (nome === null || nome.trim() === "") {
+            if (!nome || nome.trim() === "") {
                 alert("Por favor, digite um nome válido!");
                 return;
-            }
-            pilhaPessoas.push(nome.trim());
+            pilhaPessoas.push(nome);
             mostrarLista();
             
+            }
         }
-        
 
         function posicao(){
-            var input= prompt ('Qual posição da lista deseja consultar?');
+            var indice = prompt ('Qual posição da lista deseja consultar?');
             indice = Number(indice);
             if (indice < 0 || indice >= pilhaPessoas.length){
                 alert('Posição Inválida!');
