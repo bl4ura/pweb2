@@ -3,9 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de Pessoas </title>
+     <script>
+        let pilhaPessoas = Array();
+        function mostrarLista () {
+            const container = document.getElementById ('minhaDiv');
+            container.innerHTML = ''; 
+
+                for (var i = 0; i < piçhaPessoas.lenght; i++) {
+                    var tag = '<h5>' + i + '-' + pilhaPessoas [i] + '</h5';
+                    container.innerHTML += tag;
+
+                }
+
+        }
+        function adicionar (){
+            var nome = prompt('Qual o nome da pessoa?');
+            pilhaPessoas.push(nome);
+            mostrarLista();
+        }
+
+        function posicao(){
+            var indice = prompt ('Qual posição da lista deseja consultar?');
+            indice = Number(indice);
+            if (indice < 0 || indice >= pilhaPessoas.lenght){
+                alert('Posição Inválida!');
+                return;
+            }
+            alert('Na posição ' + indice + 'está:' + pilhaPessoas [indice]);
+             }
+        
+
+        function remover () { 
+            if (pilhasPessoas.lenght === 0) {
+                alert('A pilha está vazia!'); 
+            } else {
+              let removido = pilhaPessoas.pop();
+              alert('Removido:' + removido ); 
+              mostrarLista(); 
+            }
+          }
+
+        function LimparLista() {
+            pilhaPessoas = []; 
+            mostrarLista();
+         }
+
+
+
+
+
+
+
+     </script>
 </head>
 <body>
+
     
 </body>
 </html>
