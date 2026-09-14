@@ -8,6 +8,7 @@
 
 
         let pilhaPessoas = Array();
+
         function mostrarLista () {
             const container = document.getElementById ('minhaDiv');
             container.innerHTML = ''; 
@@ -21,17 +22,18 @@
         }
         function adicionar (){
             var nome = prompt('Qual o nome da pessoa?');
-            if (!nome || nome.trim() === "") {
+            if (nome === null || nome.trim() === "") {
                 alert("Por favor, digite um nome válido!");
                 return;
-            pilhaPessoas.push(nome);
+            }
+            pilhaPessoas.push(nome.trim());
             mostrarLista();
             
-            }
         }
+        
 
         function posicao(){
-            var indice = prompt ('Qual posição da lista deseja consultar?');
+            var input= prompt ('Qual posição da lista deseja consultar?');
             indice = Number(indice);
             if (indice < 0 || indice >= pilhaPessoas.length){
                 alert('Posição Inválida!');
@@ -45,13 +47,13 @@
             if (pilhasPessoas.length === 0) {
                 alert('A pilha está vazia!'); 
             } else {
-              let removido = pilhaPessoas.pop();
-              alert('Removido:' + removido ); 
-              mostrarLista(); 
+                let removido = pilhaPessoas.pop();
+                alert('Removido:' + removido ); 
+                mostrarLista(); 
             }
           }
 
-        function LimparLista() {
+        function limparLista() {
             pilhaPessoas = []; 
             mostrarLista();
             if (pilhaPessoas.length === 0) {
