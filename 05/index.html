@@ -26,17 +26,26 @@
     }
 
     function adicionar() {
-      // pega os valores digitados nos inputs
-      const nome = document.getElementById('nome').value;
-      const autor = document.getElementById('autor').value;
-      const ano = document.getElementById('ano').value;
+    const nome = document.getElementById('nome').value;
+    const autor = document.getElementById('autor').value;
+    const ano = document.getElementById('ano').value;
 
-      pilhaLivros.push({ nome, autor, ano });
+    const indice = Number(prompt('Em qual posição deseja adicionar o livro?'));
 
-      // limpa os campos e atualiza a lista
-      limpaCampos();
-      mostrarLista();
+    if (indice < 0 || indice > pilhaLivros.length || !Number.isInteger(indice)) {
+        alert('Posição inválida!');
+        return;
     }
+
+    const livro = { nome, autor, ano };
+
+    pilhaLivros.splice(indice, 0, livro);
+
+    alert('Livro adicionado na posição ' + indice + '!');
+
+    limpaCampos();
+    mostrarLista();
+}
 
     function posicao() {
       const indice = Number(prompt('Qual posição da lista deseja consultar?'));
