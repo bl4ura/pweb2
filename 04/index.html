@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Lista de Pessoas</title>
+    <div id="minhaDiv"></div>
+
+    <hr>
 
     <script>
 
@@ -17,24 +20,31 @@
             container.innerHTML = '';
             
             for (let i = 0; i < pilhaPessoas.length; i++) { 
-                let tag = '<h5>' + i + ' - ' + pilhaPessoas[i] + '</h5>'; 
-                container.innerHTML += tag; 
-            }
+                const pessoa = document.createElement("h5");
 
+                pessoa.textContent = i + " - " + pilhaPessoas[i];
+                container.appendChild(pessoa);
+            }
         } 
         function adicionar() { 
             let nome = prompt('Qual o nome da pessoa?'); 
             
-            if (!nome || nome.trim() === '') {
-                 alert('Por favor, digite um nome válido!'); 
-                 return; 
-                 
+            if (nome === null) {
+                return;
             }
-            
+
+            nome = nome.trim();
+
+            if (nome === "") {
+                alert("Por favor, digite um nome válido!");
+                return;
+            }
+
             pilhaPessoas.push(nome);
-            mostrarLista(); 
-             
+
+            mostrarLista();
         }
+
         
         function posicao() { 
             let indice = prompt('Qual posição da lista deseja consultar?');
@@ -63,8 +73,8 @@
 
         function remover() { 
             if (pilhaPessoas.length === 0) {
-                 alert('A pilha está vazia!');
-                 return;
+                alert('A pilha está vazia!');
+                return;
             }
 
             let removido = pilhaPessoas.pop(); 
