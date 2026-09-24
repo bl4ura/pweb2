@@ -10,7 +10,8 @@
     <script>
 
        let pilhaPessoas = [];
-        function mostrarLista() { 
+
+       function mostrarLista() { 
             const container = document.getElementById('minhaDiv'); 
             
             container.innerHTML = '';
@@ -31,7 +32,7 @@
             }
             
             pilhaPessoas.push(nome);
-             mostrarLista(); 
+            mostrarLista(); 
              
         }
         
@@ -53,17 +54,19 @@
                 
             alert( 
                 'Na posição ' +
-                 indice + 
-                 ' está: ' + 
-                 pilhaPessoas[indice] 
+                indice + 
+                ' está: ' + 
+                pilhaPessoas[indice] 
             );
             
         } 
+
         function remover() { 
             if (pilhaPessoas.length === 0) {
                  alert('A pilha está vazia!');
                  return;
             }
+
             let removido = pilhaPessoas.pop(); 
             
             alert('Pessoa removida: ' + removido);
@@ -73,8 +76,8 @@
         
         function limparLista() { 
             if (pilhaPessoas.length === 0) {
-                 alert('A lista já está vazia!'); 
-                 return;
+                alert('A lista já está vazia!'); 
+                return;
             } 
             
             pilhaPessoas = [];
@@ -83,7 +86,7 @@
         } 
         
         function inverterPilha() {
-             if (pilhaPessoas.length === 0) { 
+            if (pilhaPessoas.length === 0) { 
                 alert('A lista está vazia!'); 
                 return; 
             } 
