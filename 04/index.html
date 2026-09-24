@@ -9,106 +9,104 @@
 
     <script>
 
-        let pilhaPessoas = [];
-
-        function mostrarLista() {
-            const container = document.getElementById('minhaDiv');
-
+       let pilhaPessoas = [];
+        function mostrarLista() { 
+            const container = document.getElementById('minhaDiv'); 
+            
             container.innerHTML = '';
-
-            for (var i = 0; i < pilhaPessoas.length; i++) {
-                var tag = '<h5>' + i + ' - ' + pilhaPessoas[i] + '</h5>';
-                container.innerHTML += tag;
-            }
-        }
-
-
-        function adicionar() {
-            var nome = prompt('Qual o nome da pessoa?');
-
-            if (!nome || nome.trim() === "") {
-                alert("Por favor, digite um nome válido!");
-                return;
+            
+            for (let i = 0; i < pilhaPessoas.length; i++) { 
+                let tag = '<h5>' + i + ' - ' + pilhaPessoas[i] + '</h5>'; 
+                container.innerHTML += tag; 
             }
 
+        } 
+        function adicionar() { 
+            let nome = prompt('Qual o nome da pessoa?'); 
+            
+            if (!nome || nome.trim() === '') {
+                 alert('Por favor, digite um nome válido!'); 
+                 return; 
+                 
+            }
+            
             pilhaPessoas.push(nome);
-            mostrarLista();
+             mostrarLista(); 
+             
         }
-
-
-        function posicao() {
-            var indice = prompt('Qual posição da lista deseja consultar?');
-
+        
+        function posicao() { 
+            let indice = prompt('Qual posição da lista deseja consultar?');
+            
             indice = Number(indice);
-
-            if (isNaN(indice) || indice < 0 || indice >= pilhaPessoas.length) {
+            
+            if (
+                 isNaN(indice) ||
+                 indice < 0 ||
+                 indice >= pilhaPessoas.length 
+            )  {
+                
+                
                 alert('Posição inválida!');
                 return;
-            }
-
-            alert('Na posição ' + indice + ' está: ' + pilhaPessoas[indice]);
-        }
-
-
-        function remover() {
-
+            } 
+                
+            alert( 
+                'Na posição ' +
+                 indice + 
+                 ' está: ' + 
+                 pilhaPessoas[indice] 
+            );
+            
+        } 
+        function remover() { 
             if (pilhaPessoas.length === 0) {
-                alert('A pilha está vazia!');
-                return;
+                 alert('A pilha está vazia!');
+                 return;
             }
-
-            let removido = pilhaPessoas.pop();
-
+            let removido = pilhaPessoas.pop(); 
+            
             alert('Pessoa removida: ' + removido);
-
+            
             mostrarLista();
-        }
-
-
-        function limparLista() {
-
+        } 
+        
+        function limparLista() { 
             if (pilhaPessoas.length === 0) {
-                alert('A lista já está vazia!');
-                return;
-            }
-
+                 alert('A lista já está vazia!'); 
+                 return;
+            } 
+            
             pilhaPessoas = [];
-
+            
             mostrarLista();
-        }
-
-
+        } 
+        
         function inverterPilha() {
-
-            if (pilhaPessoas.length === 0) {
-                alert('A lista está vazia!');
-                return;
-            }
-
+             if (pilhaPessoas.length === 0) { 
+                alert('A lista está vazia!'); 
+                return; 
+            } 
+            
             pilhaPessoas.reverse();
-
+            
+            
             mostrarLista();
-        }
-
+        } 
     </script>
-</head>
+ </head>  
+   
 
 <body>
-
     <h1>Lista de Pessoas</h1>
-
-    <button onclick="adicionar()">Adicionar Pessoa</button>
-
-    <button onclick="posicao()">Posição</button>
-
-    <button onclick="remover()">Remover</button>
-
-    <button onclick="limparLista()">Limpar</button>
-
-    <button onclick="inverterPilha()">Inverter Pilha</button>
-
-    <div id="minhaDiv"></div>
-
+    <button onclick="adicionar()">Adicionar Pessoa</button> 
+    <button onclick="posicao()">Posição</button> 
+    <button onclick="remover()">Remover</button> 
+    <button onclick="limparLista()">Limpar</button> 
+    <button onclick="inverterPilha()">Inverter Pilha</button> 
+    <div id="minhaDiv"></div> 
+    
+    
     <hr>
 
 </body>
